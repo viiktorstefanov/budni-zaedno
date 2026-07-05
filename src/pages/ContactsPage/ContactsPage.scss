@@ -1,0 +1,93 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+@use '@/styles/mixins' as m;
+@use '@/styles/breakpoints' as b;
+
+.contacts-page {
+  padding-block: v.$space-7 v.$space-8;
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: v.$space-7;
+
+    @include b.respond-to(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-4;
+
+    h3 {
+      display: flex;
+      align-items: center;
+      gap: v.$space-2;
+      font-size: 0.95rem;
+      color: v.$color-orange;
+      margin-bottom: v.$space-1;
+
+      svg {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    p {
+      color: v.$color-text-muted;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-4;
+    background: v.$color-bg-alt;
+    border-radius: v.$radius-md;
+    padding: v.$space-5;
+    @include m.card-shadow;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-2;
+
+    label {
+      @include t.heading-font(600);
+      font-size: 0.9rem;
+    }
+
+    input,
+    textarea {
+      border: 1px solid v.$color-border;
+      border-radius: v.$radius-sm;
+      padding: 10px 14px;
+      background: v.$color-bg;
+
+      &:focus {
+        outline: 2px solid v.$color-purple;
+        outline-offset: 1px;
+      }
+    }
+  }
+
+  &__success {
+    background: v.$color-bg-alt;
+    border-radius: v.$radius-md;
+    padding: v.$space-6;
+    text-align: center;
+    @include m.card-shadow;
+
+    h3 {
+      margin-bottom: v.$space-2;
+    }
+
+    p {
+      color: v.$color-text-muted;
+    }
+  }
+}

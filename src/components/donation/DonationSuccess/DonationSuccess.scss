@@ -1,0 +1,50 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+@use '@/styles/mixins' as m;
+
+.donation-success {
+  text-align: center;
+  background: v.$color-bg-alt;
+  border-radius: v.$radius-md;
+  padding: v.$space-7 v.$space-5;
+  box-shadow: v.$shadow-card;
+
+  &__icon {
+    @include m.flex-center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: v.$gradient-brand;
+    color: white;
+    margin-inline: auto;
+    margin-bottom: v.$space-4;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  h2 {
+    margin-bottom: v.$space-3;
+  }
+
+  &__amount {
+    font-size: 1.1rem;
+    color: v.$color-purple;
+    font-weight: 700;
+    margin-bottom: v.$space-2;
+  }
+
+  &__cause,
+  &__reference {
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-2;
+  }
+
+  &__note {
+    color: v.$color-text-muted;
+    font-size: 0.85rem;
+    margin-bottom: v.$space-5;
+  }
+}

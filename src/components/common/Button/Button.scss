@@ -1,0 +1,18 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+@use '@/styles/mixins' as m;
+
+.btn {
+  @include m.pill-button;
+  @include t.heading-font(700);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: v.$color-purple;
+  color: white;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}

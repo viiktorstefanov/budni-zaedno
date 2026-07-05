@@ -1,0 +1,47 @@
+@use 'reset';
+@use 'theme';
+@use 'variables' as v;
+@use 'typography' as t;
+@use 'mixins' as m;
+
+html,
+body {
+  background: v.$color-bg;
+  color: v.$color-text;
+  font-family: t.$font-body;
+}
+
+*,
+*::before,
+*::after {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @include t.heading-font(800);
+  color: v.$color-purple;
+  line-height: 1.15;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  @include m.container;
+}
+
+// Letter-spacing breaks Arabic glyph joining, so it must be neutralized wherever
+// components apply it for Latin/Cyrillic "eyebrow"-style styling.
+[dir='rtl'] {
+  * {
+    letter-spacing: normal !important;
+  }
+}

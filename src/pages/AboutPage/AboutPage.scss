@@ -1,0 +1,52 @@
+@use '@/styles/variables' as v;
+@use '@/styles/breakpoints' as b;
+
+.about-page {
+  padding-block: v.$space-7;
+
+  section + section {
+    margin-top: v.$space-8;
+  }
+
+  &__intro-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: v.$space-5;
+    color: v.$color-text-muted;
+    line-height: 1.7;
+
+    @include b.respond-to(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__values h2 {
+    margin-bottom: v.$space-4;
+  }
+
+  &__values-list {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-3;
+    color: v.$color-text-muted;
+    line-height: 1.6;
+
+    strong {
+      color: v.$color-purple;
+    }
+  }
+
+  &__team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: v.$space-4;
+
+    @include b.respond-to(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include b.respond-to(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

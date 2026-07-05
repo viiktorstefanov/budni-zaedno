@@ -1,0 +1,29 @@
+@use 'sass:color';
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+
+.badge {
+  @include t.heading-font(600);
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  padding: 5px 14px;
+  border-radius: v.$radius-pill;
+
+  &--active,
+  &--upcoming {
+    background: rgba(v.$color-green, 0.14);
+    color: color.adjust(v.$color-green, $lightness: -8%);
+  }
+
+  &--completed,
+  &--past {
+    background: color-mix(in srgb, v.$color-text-muted 14%, transparent);
+    color: v.$color-text-muted;
+  }
+
+  &--neutral {
+    background: rgba(v.$color-purple, 0.1);
+    color: v.$color-purple;
+  }
+}

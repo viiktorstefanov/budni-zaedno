@@ -1,0 +1,46 @@
+// Brand palette extracted from design-2.jpeg
+$color-purple: #5b2a86;
+$color-purple-dark: #4a2170;
+$color-pink: #e23f6d;
+$color-orange: #e8792a;
+$color-orange-light: #f0923a;
+$color-green: #4caf6d;
+$color-teal: #2fa89c;
+$color-blue: #3e7cb1;
+$color-yellow: #f5b942;
+
+$color-bg: var(--color-bg);
+$color-bg-alt: var(--color-bg-alt);
+$color-text: var(--color-text);
+$color-text-muted: var(--color-text-muted);
+$color-border: var(--color-border);
+
+$gradient-brand: linear-gradient(135deg, $color-pink 0%, $color-orange 45%, $color-purple 100%);
+$gradient-brand-soft: linear-gradient(135deg, rgba($color-pink, 0.12) 0%, rgba($color-orange, 0.12) 45%, rgba($color-purple, 0.12) 100%);
+$gradient-rainbow: linear-gradient(90deg, $color-pink 0%, $color-orange 25%, $color-yellow 45%, $color-teal 65%, $color-blue 85%, $color-purple 100%);
+
+$feature-colors: (
+  'purple': $color-purple,
+  'green': $color-green,
+  'orange': $color-orange,
+  'blue': $color-blue,
+);
+
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 28px;
+$radius-pill: 999px;
+
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 16px;
+$space-4: 24px;
+$space-5: 32px;
+$space-6: 48px;
+$space-7: 64px;
+$space-8: 96px;
+
+$shadow-card: var(--shadow-card);
+$shadow-card-hover: var(--shadow-card-hover);
+
+$container-max: 1200px;

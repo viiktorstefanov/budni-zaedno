@@ -1,0 +1,60 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+@use '@/styles/breakpoints' as b;
+
+.cause-detail {
+  padding-block: v.$space-6 v.$space-8;
+
+  &__back {
+    display: inline-block;
+    @include t.heading-font(600);
+    color: v.$color-purple;
+    margin-bottom: v.$space-5;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$space-6;
+    align-items: start;
+
+    @include b.respond-to(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: v.$space-3;
+    margin-bottom: v.$space-3;
+  }
+
+  &__category {
+    @include t.heading-font(600);
+    font-size: 0.85rem;
+    color: v.$color-teal;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__title {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-bottom: v.$space-4;
+  }
+
+  &__paragraph {
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-3;
+    line-height: 1.7;
+  }
+
+  &__progress {
+    margin-block: v.$space-5;
+    max-width: 360px;
+  }
+}

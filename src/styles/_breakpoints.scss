@@ -1,0 +1,19 @@
+$bp-mobile: 768px;
+$bp-tablet: 1024px;
+$bp-header: 1215px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $bp-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $bp-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == header {
+    @media (max-width: $bp-header) {
+      @content;
+    }
+  }
+}

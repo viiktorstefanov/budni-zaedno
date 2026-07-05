@@ -1,0 +1,20 @@
+@use '@/styles/variables' as v;
+@use '@/styles/breakpoints' as b;
+
+.feature-row {
+  padding-block: v.$space-6 v.$space-5;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: v.$space-5;
+
+    @include b.respond-to(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include b.respond-to(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@use '@/styles/variables' as v;
+
+.donate-page {
+  padding-block: v.$space-7 v.$space-8;
+
+  &__inner {
+    max-width: 560px;
+  }
+}

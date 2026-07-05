@@ -1,0 +1,28 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+
+.quote-banner {
+  padding-block: v.$space-8;
+  text-align: center;
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: v.$space-3;
+    margin-inline: auto;
+  }
+
+  &__text {
+    @include t.script-font;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    color: v.$color-purple;
+  }
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    color: v.$color-pink;
+    flex-shrink: 0;
+  }
+}

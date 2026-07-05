@@ -1,0 +1,43 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: v.$radius-pill;
+  border: 1px solid v.$color-border;
+  background: v.$color-bg-alt;
+  flex-shrink: 0;
+
+  &__option {
+    @include t.heading-font(700);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 30px;
+    padding-inline: 6px;
+    border: none;
+    border-radius: v.$radius-pill;
+    background: transparent;
+    color: v.$color-text-muted;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+
+    &:hover {
+      color: v.$color-purple;
+    }
+
+    &--active {
+      background: v.$color-purple;
+      color: #fff;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

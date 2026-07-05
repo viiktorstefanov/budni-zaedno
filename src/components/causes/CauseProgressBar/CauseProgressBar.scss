@@ -1,0 +1,30 @@
+@use '@/styles/variables' as v;
+
+.cause-progress {
+  &__track {
+    width: 100%;
+    height: 10px;
+    border-radius: v.$radius-pill;
+    background: v.$color-border;
+    overflow: hidden;
+    margin-bottom: v.$space-2;
+  }
+
+  &__fill {
+    height: 100%;
+    background: v.$gradient-brand;
+    border-radius: v.$radius-pill;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: v.$color-text-muted;
+  }
+
+  &__raised {
+    color: v.$color-purple;
+    font-weight: 700;
+  }
+}

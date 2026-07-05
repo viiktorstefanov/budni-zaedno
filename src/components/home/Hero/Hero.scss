@@ -1,0 +1,69 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+@use '@/styles/breakpoints' as b;
+@use '@/styles/mixins' as m;
+
+.hero {
+  &__inner {
+    position: relative;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 10%;
+    z-index: 1;
+    transform: translateY(-50%);
+
+    @include b.respond-to(mobile) {
+      position: static;
+      max-width: none;
+      transform: none;
+      padding: v.$space-5 v.$space-4 0;
+    }
+  }
+
+  &__title {
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    margin-bottom: v.$space-4;
+
+    &-accent {
+      @include t.script-font;
+      @include m.gradient-text;
+      background: v.$gradient-rainbow;
+      -webkit-background-clip: text;
+      background-clip: text;
+      display: block;
+      font-size: 0.8em;
+      line-height: 1.3;
+
+      &:first-of-type {
+        margin-top: v.$space-3;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 1.1rem;
+    color: v.$color-text-muted;
+    max-width: 480px;
+    margin-bottom: v.$space-5;
+  }
+
+  &__actions {
+    display: flex;
+    gap: v.$space-3;
+    flex-wrap: wrap;
+  }
+
+  &__media {
+    position: relative;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}

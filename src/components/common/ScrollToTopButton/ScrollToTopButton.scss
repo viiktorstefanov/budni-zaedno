@@ -1,0 +1,46 @@
+@use '@/styles/variables' as v;
+@use '@/styles/mixins' as m;
+@use '@/styles/breakpoints' as b;
+
+.scroll-to-top-btn {
+  @include m.flex-center;
+  position: fixed;
+  inset-inline-end: v.$space-4;
+  bottom: v.$space-4;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: v.$gradient-brand;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: v.$shadow-card;
+  z-index: 40;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: v.$shadow-card-hover;
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  @include b.respond-to(mobile) {
+    inset-inline-end: v.$space-3;
+    bottom: v.$space-3;
+    width: 44px;
+    height: 44px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

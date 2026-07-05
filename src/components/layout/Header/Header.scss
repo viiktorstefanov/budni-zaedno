@@ -1,0 +1,144 @@
+@use '@/styles/variables' as v;
+@use '@/styles/breakpoints' as b;
+@use '@/styles/typography' as t;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: v.$color-bg;
+  border-bottom: 1px solid v.$color-border;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: v.$space-5;
+    padding-block: v.$space-3;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: v.$space-3;
+    flex-shrink: 0;
+  }
+
+  &__logo {
+    height: 80px;
+    width: auto;
+
+    @include b.respond-to(header) {
+      height: 56px;
+    }
+  }
+
+  &__brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  &__brand-eyebrow {
+    @include t.heading-font(600);
+    font-size: 0.8rem;
+    letter-spacing: 0.32em;
+    color: v.$color-text;
+
+    @include b.respond-to(header) {
+      font-size: 0.7rem;
+    }
+  }
+
+  &__brand-name {
+    @include t.heading-font(600);
+    font-size: 1.35rem;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+    color: v.$color-text;
+    text-transform: uppercase;
+
+    @include b.respond-to(header) {
+      font-size: 1.05rem;
+    }
+  }
+
+  &__nav-panel {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: v.$space-4;
+
+    @include b.respond-to(header) {
+      position: fixed;
+      inset: 72px 0 0 0;
+      background: v.$color-bg;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: v.$space-5 v.$space-4;
+      gap: v.$space-5;
+      transform: translateX(100%);
+      transition: transform 0.25s ease;
+      overflow-y: auto;
+
+      :root[dir='rtl'] & {
+        transform: translateX(-100%);
+      }
+
+      &--open {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__cta {
+    @include b.respond-to(header) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &__menu-toggle {
+    display: none;
+    color: v.$color-purple;
+    cursor: pointer;
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    @include b.respond-to(header) {
+      display: flex;
+    }
+  }
+
+  &__theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: v.$radius-pill;
+    border: 1px solid v.$color-border;
+    background: v.$color-bg-alt;
+    color: v.$color-purple;
+    cursor: pointer;
+
+    :root[data-theme='dark'] & {
+      color: v.$color-text;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background: v.$color-border;
+    }
+  }
+}

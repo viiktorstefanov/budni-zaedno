@@ -1,0 +1,48 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+@use '@/styles/mixins' as m;
+
+.image-placeholder {
+  @include m.flex-center;
+  width: 100%;
+  background: v.$gradient-brand-soft;
+  border-radius: v.$radius-md;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: v.$gradient-brand;
+    opacity: 0.06;
+  }
+
+  &--wide {
+    aspect-ratio: 16 / 10;
+  }
+
+  &--square {
+    aspect-ratio: 1 / 1;
+  }
+
+  &--tall {
+    aspect-ratio: 3 / 4;
+  }
+
+  &__initial {
+    @include t.heading-font(800);
+    font-size: 2.4rem;
+    color: v.$color-purple;
+    opacity: 0.35;
+    position: relative;
+  }
+
+  svg {
+    width: 40%;
+    height: 40%;
+    color: v.$color-purple;
+    opacity: 0.4;
+    position: relative;
+  }
+}

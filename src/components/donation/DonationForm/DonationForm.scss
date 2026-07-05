@@ -1,0 +1,42 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+
+.donation-form {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-4;
+  background: v.$color-bg-alt;
+  border-radius: v.$radius-md;
+  padding: v.$space-5;
+  box-shadow: v.$shadow-card;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-2;
+
+    label {
+      @include t.heading-font(600);
+      font-size: 0.9rem;
+    }
+
+    input,
+    select,
+    textarea {
+      border: 1px solid v.$color-border;
+      border-radius: v.$radius-sm;
+      padding: 10px 14px;
+      background: v.$color-bg;
+
+      &:focus {
+        outline: 2px solid v.$color-purple;
+        outline-offset: 1px;
+      }
+    }
+  }
+
+  &__hint {
+    font-size: 0.85rem;
+    color: v.$color-orange;
+  }
+}

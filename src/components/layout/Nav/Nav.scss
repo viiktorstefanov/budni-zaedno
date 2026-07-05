@@ -1,0 +1,46 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+@use '@/styles/breakpoints' as b;
+
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: v.$space-4;
+
+    @include b.respond-to(header) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: v.$space-4;
+    }
+  }
+
+  &__link {
+    @include t.heading-font(600);
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    color: v.$color-text;
+    font-size: 0.95rem;
+    padding-bottom: 4px;
+
+    &--active {
+      color: v.$color-purple;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 2px;
+        background: v.$gradient-brand;
+        border-radius: v.$radius-pill;
+      }
+    }
+
+    &:hover {
+      color: v.$color-purple;
+    }
+  }
+}

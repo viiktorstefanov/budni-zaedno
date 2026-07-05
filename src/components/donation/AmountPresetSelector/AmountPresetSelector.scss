@@ -1,0 +1,61 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+
+.amount-selector {
+  &__label {
+    @include t.heading-font(600);
+    display: block;
+    margin-bottom: v.$space-3;
+    font-size: 0.95rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: v.$space-2;
+    margin-bottom: v.$space-4;
+  }
+
+  &__preset {
+    @include t.heading-font(600);
+    padding: 12px 4px;
+    border-radius: v.$radius-sm;
+    border: 2px solid v.$color-border;
+    background: v.$color-bg;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      border-color: v.$color-purple;
+    }
+
+    &--active {
+      border-color: v.$color-purple;
+      background: v.$gradient-brand;
+      color: white;
+    }
+  }
+
+  &__custom {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-2;
+
+    label {
+      @include t.heading-font(600);
+      font-size: 0.9rem;
+    }
+
+    input {
+      border: 1px solid v.$color-border;
+      border-radius: v.$radius-sm;
+      padding: 10px 14px;
+      background: v.$color-bg;
+
+      &:focus {
+        outline: 2px solid v.$color-purple;
+        outline-offset: 1px;
+      }
+    }
+  }
+}

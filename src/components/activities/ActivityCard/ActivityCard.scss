@@ -1,0 +1,60 @@
+@use '@/styles/variables' as v;
+@use '@/styles/typography' as t;
+@use '@/styles/mixins' as m;
+@use '@/styles/breakpoints' as b;
+
+.activity-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: v.$space-4;
+  background: v.$color-bg-alt;
+  border-radius: v.$radius-md;
+  overflow: hidden;
+  padding: v.$space-3;
+  @include m.card-shadow;
+
+  @include b.respond-to(mobile) {
+    grid-template-columns: 90px 1fr;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: v.$space-2;
+    margin-bottom: v.$space-2;
+  }
+
+  &__category {
+    @include t.heading-font(600);
+    font-size: 0.78rem;
+    color: v.$color-teal;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    margin-bottom: v.$space-2;
+  }
+
+  &__description {
+    color: v.$color-text-muted;
+    font-size: 0.92rem;
+    margin-bottom: v.$space-3;
+  }
+
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$space-3;
+    font-size: 0.85rem;
+    color: v.$color-text-muted;
+  }
+}

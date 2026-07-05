@@ -1,0 +1,14 @@
+// Google Fonts (Cyrillic subsets confirmed): Poppins, Nunito Sans, Marck Script
+$font-heading: 'Poppins', 'Segoe UI', sans-serif;
+$font-body: 'Nunito Sans', 'Segoe UI', sans-serif;
+$font-script: 'Marck Script', cursive;
+
+@mixin heading-font($weight: 700) {
+  font-family: $font-heading;
+  font-weight: $weight;
+}
+
+@mixin script-font {
+  font-family: $font-script;
+  font-weight: 400;
+}

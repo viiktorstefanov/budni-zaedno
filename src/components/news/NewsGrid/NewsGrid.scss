@@ -1,0 +1,16 @@
+@use '@/styles/variables' as v;
+@use '@/styles/breakpoints' as b;
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: v.$space-5;
+
+  @include b.respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include b.respond-to(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
