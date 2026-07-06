@@ -6,6 +6,7 @@
   @include t.heading-font(600);
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   font-size: 0.78rem;
   padding: 5px 14px;
   border-radius: v.$radius-pill;
