@@ -157,7 +157,7 @@ const bg: UIStrings = {
     heroTitleLine1: 'заедно днес,',
     heroTitleLine2: 'за по-добро утре',
     heroText:
-      'Вярваме в силата на общността, образованието и добротата. Работим за по-добро бъдеще за децата и семействата.',
+      'Вярваме, че когато сме будни за проблемите около нас и действаме заедно, можем да променяме живота към по-добро. Подкрепяме децата, семействата и хората в нужда и създаваме възможности за по-здравословна, активна и приобщаваща общност.',
     heroCta: 'Научи повече',
     quote: 'Когато сме будни и заедно, можем всичко.',
   },
@@ -283,7 +283,7 @@ const en: UIStrings = {
     heroTitleLine1: 'together today,',
     heroTitleLine2: 'for a better tomorrow',
     heroText:
-      'We believe in the power of community, education, and kindness. We work for a better future for children and families.',
+      'We believe that when we are mindful of the issues around us and work together, we can make a positive difference in people’s lives. We support children, families, and people in need, and we create opportunities for a healthier, more active, and more inclusive community.',
     heroCta: 'Learn more',
     quote: 'When we are awake and together, we can do anything.',
   },
@@ -408,7 +408,7 @@ const ar: UIStrings = {
   home: {
     heroTitleLine1: 'معًا اليوم،',
     heroTitleLine2: 'من أجل غد أفضل',
-    heroText: 'نؤمن بقوة المجتمع والتعليم واللطف. نعمل من أجل مستقبل أفضل للأطفال والأسر.',
+    heroText: 'نؤمن بأنه عندما نكون واعين بالمشكلات المحيطة بنا ونتعاون معًا، يمكننا تغيير الحياة نحو الأفضل. نحن ندعم الأطفال والأسر والأشخاص المحتاجين، ونخلق فرصًا لبناء مجتمع أكثر صحة ونشاطًا وشمولية.',
     heroCta: 'اعرف المزيد',
     quote: 'عندما نكون يقظين ومعًا، نستطيع فعل أي شيء.',
   },
